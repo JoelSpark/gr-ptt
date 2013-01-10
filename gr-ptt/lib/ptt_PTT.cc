@@ -1,0 +1,88 @@
+/* -*- c++ -*- */
+/* 
+ * Copyright 2013 <+YOU OR YOUR COMPANY+>.
+ * 
+ * This is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3, or (at your option)
+ * any later version.
+ * 
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this software; see the file COPYING.  If not, write to
+ * the Free Software Foundation, Inc., 51 Franklin Street,
+ * Boston, MA 02110-1301, USA.
+ */
+
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
+#include <gr_io_signature.h>
+#include <ptt_PTT.h>
+
+// Create new instance of ptt_PTT and return a boost shared_ptr. Public constructor function
+ptt_PTT_sptr ptt_make_PTT (float k){
+return ptt_PTT_sptr (new ptt_PTT(k));
+}
+
+
+static const int MIN_IN=1;
+static const int MAX_IN=1;
+static const int MIN_OUT=1;
+static const int MAX_OUT=1;
+
+
+
+//***********************************PRIVATE CONSTRUCTOR FUNCTION*************************************//
+// Constructs the ptt_PTT object, derived from the gr_block(name,io_signature,io_signature) block
+
+ptt_PTT::ptt_PTT (float k) : gr_block ("PTT", gr_make_io_signature (MIN_IN, MAX_IN, sizeof (float)),gr_make_io_signature (MIN_IN, MAX_IN, sizeof (float))), d_k(k)
+{}
+
+//***********************************DESTRUCTOR FUNCTION**********************************************//
+ptt_PTT::~ptt_PTT (){   }                	
+
+
+//***********************************CLASS FUNCTIONS**************************************************//
+
+
+//queries "d_k"
+float ptt_PTT::k(){
+  return d_k;
+}
+
+//sets "d_k"
+void ptt_PTT::set_k(float k){
+  d_k = k;
+}
+
+
+
+
+//***********************************WORK FUNCTION DEFINITION*****************************************//
+int ptt_PTT::general_work (int noutput_items,
+			       gr_vector_int &ninput_items,
+			       gr_vector_const_void_star &input_items,
+			       gr_vector_void_star &output_items)
+{
+  const float *in = (const float *) input_items[0];
+  float *out = (float *) output_items[0];
+  
+  for (int i=0; i<noutput_items; i++){
+  out[i] = in[i] * d_k;
+}
+
+  // Tell runtime system how many input items we consumed on
+  // each input stream.
+  consume_each (noutput_items);
+
+  // Tell runtime system how many output items we produced.
+  return noutput_items;
+}
+
+//*****************************************************************************************************//

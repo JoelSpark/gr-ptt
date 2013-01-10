@@ -1,0 +1,6 @@
+/home/joel/ptt/gr-ptt/gr-ptt/build/swig/CMakeFiles/_ptt_swig.dir
+/home/joel/ptt/gr-ptt/gr-ptt/build/swig/CMakeFiles/_ptt_swig_swig_tag.dir
+/home/joel/ptt/gr-ptt/gr-ptt/build/lib/CMakeFiles/gnuradio-ptt.dir
+/home/joel/ptt/gr-ptt/gr-ptt/build/apps/CMakeFiles/pygen_apps_9a6dd.dir
+/home/joel/ptt/gr-ptt/gr-ptt/build/python/CMakeFiles/pygen_python_f0d4d.dir
+/home/joel/ptt/gr-ptt/gr-ptt/build/swig/CMakeFiles/pygen_swig_07f53.dir

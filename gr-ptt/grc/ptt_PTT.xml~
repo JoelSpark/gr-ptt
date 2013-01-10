@@ -1,0 +1,16 @@
+<block>
+	<name>Ptt</name>
+	<key>ptt_PTT</key>
+	<import>import ptt</import>	
+	<category>PTT</category>
+	<make>ptt.PTT()</make>
+
+  	<sink>
+		<name>in</name>
+		<type>real</type>
+	</sink>
+	<source>
+		<name>out</name>
+		<type>real</type>
+	</source>
+</block>

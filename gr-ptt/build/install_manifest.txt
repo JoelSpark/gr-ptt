@@ -1,0 +1,12 @@
+/usr/local/include/ptt/ptt_api.h
+/usr/local/include/ptt/ptt_PTT.h
+/usr/local/lib/libgnuradio-ptt.so
+/usr/local/lib/python2.7/dist-packages/ptt/_ptt_swig.so
+/usr/local/lib/python2.7/dist-packages/ptt/ptt_swig.py
+/usr/local/lib/python2.7/dist-packages/ptt/ptt_swig.pyc
+/usr/local/lib/python2.7/dist-packages/ptt/ptt_swig.pyo
+/usr/local/$(GR_INCLUDE_DIR)/ptt/swig/ptt_swig.i
+/usr/local/lib/python2.7/dist-packages/ptt/__init__.py
+/usr/local/lib/python2.7/dist-packages/ptt/__init__.pyc
+/usr/local/lib/python2.7/dist-packages/ptt/__init__.pyo
+/usr/local/share/gnuradio/grc/blocks/ptt_PTT.xml
